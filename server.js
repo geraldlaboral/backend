@@ -55,3 +55,4 @@ const handleError = (res, reason, message, code) => {
 
 // ConexiÃ³n a todas la rutas.
 app.use('/api', require('./routes/usuario.route'));
+app.use('/api', require('./routes/registrar-receta.route'));
