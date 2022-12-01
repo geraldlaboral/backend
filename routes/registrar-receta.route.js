@@ -5,7 +5,7 @@ const router = express.Router();
 const Receta = require("../models/registrar-receta.model")
 
 // Ruta para registrar una receta
-router.post("/registrar-receta", (req, res) => {
+router.post("/registrar-recetas", (req, res) => {
     let nuevaReceta = new Receta({
         nombre: req.body.nombre,
         ingredientes: req.body.ingredientes,
