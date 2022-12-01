@@ -6,16 +6,16 @@ const Receta = require("../models/registrar-receta.model")
 
 // Ruta para registrar una receta
 router.post("/registrar-recetas", (req, res) => {
-    let nuevaReceta = new Receta({
+    let receta = new Receta({
         nombre: req.body.nombre,
         ingredientes: req.body.ingredientes,
         imagen: req.body.imagen,
         pasosReceta: req.body.pasosReceta,
         tipoComida: req.body.tipoComida,
         categoriaComida: req.body.categoriaComida
-    })
+    });
 
-    nuevaReceta.save((error) => {
+    receta.save((error) => {
         if (error) {
             res.json({
                 msj: "Ocurrió un error al registrar la receta",
