@@ -24,9 +24,9 @@ router.post("/registrar-recetas", (req, res) => {
         } else {
             res.json({
                 msj: "La receta se registró correctamente"
-            })
+            });
         }
-    });
+    })
 });
 
 
