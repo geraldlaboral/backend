@@ -7,7 +7,7 @@ const Receta = require("../models/registrar-receta.model")
 // Ruta para registrar una receta
 router.post("/registrar-recetas", (req, res) => {
     let receta = new Receta({
-        nombre: req.body.nombre,
+        nombre: req.body.nombreReceta,
         ingredientes: req.body.ingredientes,
         imagen: req.body.imagen,
         pasosReceta: req.body.pasosReceta,
@@ -25,6 +25,8 @@ router.post("/registrar-recetas", (req, res) => {
             res.json({
                 msj: "La receta se registró correctamente"
             });
+
+            console.log("Operacion exitosa", receta)
         }
     })
 });
