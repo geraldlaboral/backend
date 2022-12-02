@@ -54,9 +54,9 @@ router.get("/obtener-recetas", (req, res) => {
 });
 
 // Ruta para modificar recetas
-router.put("actualizar-receta", (req, res) => {});
+router.put("/actualizar-receta", (req, res) => {});
 
 // Ruta para eliminar una receta
-router.delete("eliminar-receta", (req, res) => {});
+router.delete("/eliminar-receta", (req, res) => {});
 
 module.exports = router;
