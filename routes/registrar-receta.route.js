@@ -34,7 +34,24 @@ router.post("/registrar-recetas", (req, res) => {
 
 
 // Ruta para obtener recetas registradas
-router.get("obtener-recetas", (req, res) => {});
+router.get("/obtener-recetas", (req, res) => {
+    Receta.find((error, lista) => {
+        if (error) {
+            res.json({
+                msj: "No se pudo listar la receta.",
+                error
+            });
+
+        } else {
+            res.json({
+                msj: "Receta listada correctamente.",
+                lista
+            });
+
+        }
+    })
+
+});
 
 // Ruta para modificar recetas
 router.put("actualizar-receta", (req, res) => {});
