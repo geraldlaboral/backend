@@ -25,10 +25,8 @@ router.post("/registrar-recetas", (req, res) => {
             res.json({
                 msj: "La receta se registró correctamente"
             });
-
-            console.log("Operacion exitosa", receta)
         }
-    })
+    });
 });
 
 
