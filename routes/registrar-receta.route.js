@@ -33,7 +33,7 @@ router.post("/registrar-recetas", (req, res) => {
 
 // Ruta para obtener recetas registradas
 router.get("/obtener-recetas", (req, res) => {
-    receta.find((error, lista) => {
+    Receta.find((error, lista) => {
         if (error) {
             res.json({
                 msj: "No se pudo listar la receta.",
