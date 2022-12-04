@@ -30,7 +30,27 @@ router.post("/registrar-enfermedad", (req, res) => {
 
 
 // Ruta para obtener recetas registradas
-router.get("obtener-enfermedad", (req, res) => {});
+router.get("/obtener-enfermedades", (req, res) => {
+    Enfermedad.find((error, lista) => {
+        if (error) {
+            res.json({
+                msj: "No se pudo listar la enfermedad.",
+                error
+            });
+
+        } else {
+            res.json({
+                msj: "Enfermedad listada correctamente.",
+                lista
+            });
+
+        }
+    });
+
+});
+
+
+
 
 // Ruta para modificar recetas
 router.put("actualizar-enfermedad", (req, res) => {});
