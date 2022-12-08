@@ -11,4 +11,5 @@ const schemaReceta = new mongoose.Schema({
 
 });
 
+// nombre que le daremos al modelo, nombre del esquema que vamos a exportar, nombre de la coleccion que se creara
 module.exports = mongoose.model("Receta", schemaReceta, "recetas");
