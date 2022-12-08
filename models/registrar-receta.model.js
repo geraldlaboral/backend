@@ -1,5 +1,3 @@
-"use strict"
-
 const mongoose = require("mongoose");
 const schemaReceta = new mongoose.Schema({
     nombre: { type: String, required: true, unique: true },
