@@ -7,6 +7,7 @@ const schemaUsuario = new mongoose.Schema({
     genero: { type: String, required: true },
     correo: { type: String, required: true, unique: true },
     foto: { type: String, required: false },
-    pesoMeta: { type: Number, required: true }
+    pesoMeta: { type: Number, required: true },
+    actividad: { type: String, require: true }
 });
 module.exports = mongoose.model('Usuario', schemaUsuario, 'usuario');
