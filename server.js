@@ -67,3 +67,4 @@ app.use("/api", require("./routes/usuario.route"));
 app.use("/api", require("./routes/pesos.route"));
 app.use("/api", require("./routes/actividad.route"));
 app.use("/api", require("./routes/logros.route"));
+app.use("/api", require("./routes/ayunos.route"));
