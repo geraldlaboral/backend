@@ -12,7 +12,8 @@ router.post('/registro-usuario', (req, res) => {
         genero: req.body.genero,
         correo: req.body.correo,
         foto: req.body.foto,
-        pesoMeta: req.body.pesoMeta
+        pesoMeta: req.body.pesoMeta,
+        actividad: req.body.actividad
     });
     usuario.save((error) => {
         if (error) {
@@ -22,7 +23,7 @@ router.post('/registro-usuario', (req, res) => {
             })
         } else {
             res.json({
-                msj: 'El usuario se registro exitosamente'
+                msj: "Usuario registrado exitosamente, ahora proceda a registrar su peso"
             })
         }
     });
