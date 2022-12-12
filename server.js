@@ -8,8 +8,6 @@ require("dotenv").config();
 
 //Se declaran todos los accesos de los archivos routes.
 
-
-
 const app = express();
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
@@ -61,10 +59,14 @@ const handleError = (res, reason, message, code) => {
 };
 
 // ConexiÃ³n a todas la rutas.
-app.use('/api', require('./routes/registrar-receta.route'));
-app.use('/api', require('./routes/registrar-enfermedad.route'));
+app.use("/api", require("./routes/registrar-receta.route"));
+app.use("/api", require("./routes/registrar-enfermedad.route"));
 app.use("/api", require("./routes/usuario.route"));
 app.use("/api", require("./routes/pesos.route"));
 app.use("/api", require("./routes/actividad.route"));
 app.use("/api", require("./routes/logros.route"));
 app.use("/api", require("./routes/ayunos.route"));
+
+// Prueba Ronny
+
+//Fred
