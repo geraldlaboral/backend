@@ -44,13 +44,36 @@ router.get('/obtener-usuario', (req, res) => {
         }
     })
 });
+//ruta para buscar usuario
+router.get('/buscar-persona-identificacion', function(req, res) {
+
+    let identificacion = req.query.identificacion
+
+    Usuario.findOne({ identificacion: identificacion }, (err, personaBD) => {
+        if (err) {
+            return res.json({
+                success: false,
+                msj: 'No se encontró ninguna persona con esa identificación',
+                err
+            });
+        } else {
+            return res.json({
+                success: true,
+                persona: personaBD
+            })
+        }
+
+    })
+
+
+});
 //ruta para actualizar usuario
-router.post('/editar-usuario', function(req, res) {
+router.put('/editar-usuario', function(req, res) {
     let body = req.body;
     Usuario.updateOne({ _id: body._id }, {
             $set: req.body
         },
-        function(error, msj) {
+        function(error) {
             if (error) {
                 res.json({
                     msj: 'Ocurrio un error al editar el usuario',
