@@ -45,8 +45,24 @@ router.get('/obtener-usuario', (req, res) => {
     })
 });
 //ruta para actualizar usuario
-router.put('/editar-usuario', (req, res) => {});
-//ruta para eliminar la informacion del usuario
+router.post('/editar-usuario', function(req, res) {
+    let body = req.body;
+    Usuario.updateOne({ _id: body._id }, {
+            $set: req.body
+        },
+        function(error, msj) {
+            if (error) {
+                res.json({
+                    msj: 'Ocurrio un error al editar el usuario',
+                    error
+                })
+            } else {
+                res.json({
+                    msj: "Usuario registrado editado exitosamente."
+                })
+            }
+        })
+}); //ruta para eliminar la informacion del usuario
 router.delete('/eliminar-usuario', (req, res) => {});
 
 module.exports = router;
