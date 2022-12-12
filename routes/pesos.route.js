@@ -8,6 +8,8 @@ router.post("/registrar-peso", (req, res) => {
         fecha: req.body.fecha,
         peso: req.body.peso,
         estatura: req.body.estatura,
+        imc: req.body.imc,
+        clasificacion: req.body.clasificacion,
     });
 
     nuevoPeso.save((error) => {
